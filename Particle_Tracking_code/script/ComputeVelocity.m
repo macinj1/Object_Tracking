@@ -18,6 +18,10 @@ for k = 1:size(Particles,2)
 
     Particle_Velocity{1,k}(:,1) = Particles{1,k}(1:end-1,1) ;
 
-    Particle_Velocity{1,k}(:,2) = sqrt( diff( Particles{1,k}(:,2) ).^2 + diff( Particles{1,k}(:,3) ).^2 ) ./ diff( Particles{1,k}(:,1) ) ; 
+    Particle_Velocity{1,k}(:,2) = diff( Particles{1,k}(:,2) ) ./ diff( Particles{1,k}(:,1) ) ; 
+
+    Particle_Velocity{1,k}(:,3) = diff( Particles{1,k}(:,3) ) ./ diff( Particles{1,k}(:,1) ) ; 
+
+    Particle_Velocity{1,k}(:,4) = sqrt( diff( Particles{1,k}(:,2) ).^2 + diff( Particles{1,k}(:,3) ).^2 ) ./ diff( Particles{1,k}(:,1) ) ; 
 
 end
