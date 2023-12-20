@@ -43,12 +43,13 @@ FrameRate = 5 ;
 % Show video with particle tracking: 'yes' or 'no'
 showVideo = 'yes' ; 
 
-% Convertion factors
-timeScale = 0.03 ; % time/frame
-spaceScale = 10 ; % micrometer/pxls
+% Set the Time Scale
+timeScale = 1e-4 ; % time/frame
 
 %% Run code
 
-[Particles,Particle_Velocity,Settings] = run_analysis(file,FirstFrame,LastFrame,FrameRate,showVideo,timeScale,spaceScale) ; 
+[Particles,Particle_Velocity,Settings] = run_analysis(file,FirstFrame,LastFrame,FrameRate,showVideo,timeScale) ; 
 
 clear file FirstFrame LastFrame FrameRate spaceScale timeScale showVideo
+
+fprintf('Total number of particles detected: %1.f \n', size(Particles,2) )
