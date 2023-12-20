@@ -1,8 +1,8 @@
-function [Particles,Particle_Velocity,Settings] = run_analysis(file,FirstFrame,LastFrame,FrameRate,showVideo,timeScale,spaceScale)
+function [Particles,Particle_Velocity,Settings] = run_analysis(file,FirstFrame,LastFrame,FrameRate,showVideo,timeScale)
 
 %% Detect particles 
 
-[CropArea,data,FrameNumber] = ParticleDetection(file,FirstFrame,LastFrame,FrameRate,showVideo) ;
+[CropArea,data,FrameNumber,spaceScale] = ParticleDetection(file,FirstFrame,LastFrame,FrameRate,showVideo) ;
 
 %% Particle Tracking 
 
