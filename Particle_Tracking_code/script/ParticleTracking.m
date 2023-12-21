@@ -33,7 +33,7 @@ for k = 2:DI
 
         particles_new_frame = cat(1,particles_new_frame,p) ; 
 
-        if d <= 20
+        if d <= 10
 
             Particles_aux{1,s} = cat( 1 , Particles_aux{1,s} , [FrameNumber(k) data{k,1}(p,:)] ) ; 
 
@@ -69,4 +69,3 @@ end
 
 Particles = cat(2,Particles,Particles_aux) ;
 Particles(:,1) = [] ;
-Particles = [Particles Particles_aux] ;
