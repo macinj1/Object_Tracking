@@ -8,6 +8,12 @@ vi = VideoReader( file ) ;
 
 [~,CropArea] = imcrop( read(vi,1) ) ; 
 
+if size(CropArea,2) ~= 4
+    
+   error('Error! CropArea does not exist.')
+
+end
+
 %% Enter dimension space
 
 errorType = 1 ; 
@@ -78,16 +84,20 @@ for k = FirstFrame:FrameRate:LastFrame
     if strcmp(showVideo,'yes')
 
         imshow(fig)
+
+        title( sprintf('Frame number %3.f',k) )
     
         hold on 
     
         if any(centers)
     
-            plot(centers(:,1),centers(:,2),'ro')
+            plotHandles = plot(centers(:,1),centers(:,2),'ro') ; 
     
         end
     
         pause(0.05)
+
+        delete(plotHandles)
 
     end
 
