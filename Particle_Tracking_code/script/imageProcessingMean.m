@@ -2,7 +2,7 @@ function centers = imageProcessingMean(fig,MFrame)
 
 %% Image processing
 
-bw = abs( double( rgb2gray( fig ) ) -  MFrame  ) > 20 ; 
+bw = abs( double( rgb2gray( fig ) ) -  MFrame  ) > 22 ; 
 
 s = regionprops(bw,'Centroid','Area') ; 
 
