@@ -49,3 +49,9 @@ A second variable is listed as **Particle_Velocity** with the following informat
 | . | . | . | . |
 | . | . | . | . |
 | tn-1 | vxn-1 | vyn-1 | vn-1 |
+
+It is calculated as first-orden difference. 
+
+## Citation
+
+Mac Intyre J., Simple Object Tracking (2023), GitHub repository, https://github.com/macinj1/Object_Tracking
